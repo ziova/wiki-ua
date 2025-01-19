@@ -7,14 +7,21 @@
     <title>Curated Wikipedia Discoveries</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <style>
+     @import url('https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
      :root {
          --primary: #DC143C;
+         --link: #551A8B;
          --primary-dark: #1d4ed8;
          --background: #f8fafc;
          --card-bg: #ffffff;
          --text: #1a1a1a;
          --text-secondary: #64748b;
          --shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+     }
+
+     a {
+         text-decoration: none;
+         color: var(--link);
      }
 
      body {
@@ -134,6 +141,7 @@
          color: var(--text);
          font-size: 1.1rem;
          line-height: 1.8;
+         font-family: Barlow;
          margin: 24px 0;
      }
 
@@ -194,12 +202,13 @@
      }
 
      [data-theme="dark"] {
-         --primary: #60a5fa;
-         --primary-dark: #3b82f6;
-         --background: #1a1a1a;
-         --card-bg: #2d2d2d;
-         --text: #e5e7eb;
-         --text-secondary: #9ca3af;
+         --primary: #c7799f;
+         --primary-dark: #c380d9;
+         --background: #0a0c12;
+         --card-bg: #00020a;
+         --text: #dfbceb;
+         --text-secondary: #dfbceb;
+         --link: salmon;
      }
     </style>
 </head>
@@ -210,7 +219,7 @@
     <div class="container">
         <header>
             <h1>Curated Wikipedia Discoveries</h1>
-            <p class="subtitle">Explore fascinating and unusual articles from Wikipedia</p>
+            <p class="subtitle">Explore a random article from <a href="https://en.wikipedia.org/wiki/Wikipedia:Unusual_articles">Wikipedia's Unusual Articles</a> list.</p>
         </header>
         <div id="content">
             <div class="loading">Discovering interesting articles...</div>
@@ -220,10 +229,6 @@
                 <i class="fas fa-random"></i>
                 New Article
             </button>
-            <button id="shareButton" disabled>
-                <i class="fas fa-share-alt"></i>
-                Share
-            </button>
         </div>
     </div>
 
@@ -231,7 +236,6 @@
 
          const content = document.getElementById('content');
          const randomButton = document.getElementById('randomButton');
-         const shareButton = document.getElementById('shareButton');
          const themeToggle = document.getElementById('themeToggle');
          const searchInput = document.getElementById('searchInput');
          const listViewButton = document.getElementById('listViewButton');
@@ -368,7 +372,6 @@
         }
 
         randomButton.addEventListener('click', getRandomArticle);
-        shareButton.addEventListener('click', shareArticle);
 
         getAllArticles();
     </script>
