@@ -277,14 +277,12 @@
          function showError(message) {
              content.innerHTML = `<div class="error">${message}</div>`;
              randomButton.disabled = false;
-             shareButton.disabled = true;
              listViewButton.disabled = true;
          }
 
          function showLoading() {
              content.innerHTML = '<div class="loading">Discovering an interesting article...</div>';
              randomButton.disabled = true;
-             shareButton.disabled = true;
          }
 
         async function getAllArticles() {
@@ -349,25 +347,8 @@
                     </article>
                 `;
                 randomButton.disabled = false;
-                shareButton.disabled = false;
             } catch (err) {
                 showError("Failed to load article. Please try again.");
-            }
-        }
-
-        async function shareArticle() {
-            if (!currentArticle) return;
-
-            try {
-                await navigator.share({
-                    title: currentArticle.title,
-                    text: currentArticle.extract,
-                    url: `https://en.wikipedia.org/wiki/${currentArticle.title}`
-                });
-            } catch (err) {
-                // Fall back to copying to clipboard
-                navigator.clipboard.writeText(`${currentArticle.title}\n${currentArticle.extract}\n\nRead more: https://en.wikipedia.org/wiki/${currentArticle.title}`);
-                alert('Article link copied to clipboard!');
             }
         }
 
