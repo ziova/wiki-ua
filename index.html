@@ -7,211 +7,213 @@
     <title>Curated Wikipedia Discoveries</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <style>
-     @import url('https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
-     :root {
-         --primary: #DC143C;
-         --link: #551A8B;
-         --primary-dark: #1d4ed8;
-         --background: #f8fafc;
-         --card-bg: #ffffff;
-         --text: #1a1a1a;
-         --text-secondary: #64748b;
-         --shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
-     }
+        @import url('https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
 
-     a {
-         text-decoration: none;
-         color: var(--link);
-     }
+        :root {
+            --primary: #DC143C;
+            --link: #551A8B;
+            --primary-dark: #1d4ed8;
+            --background: #f8fafc;
+            --card-bg: #ffffff;
+            --text: #1a1a1a;
+            --text-secondary: #64748b;
+            --shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+        }
 
-     body {
-         font-family: Barlow, system-ui, -apple-system, sans-serif;
-         line-height: 1.6;
-         margin: 0;
-         padding: 20px;
-         background-color: var(--background);
-         color: var(--text);
-     }
+        a {
+            text-decoration: none;
+            color: var(--link);
+        }
 
-     .container {
-         max-width: 900px;
-         margin: 0 auto;
-         padding: 32px;
-         background: var(--card-bg);
-         border-radius: 16px;
-         box-shadow: var(--shadow);
-     }
+        body {
+            font-family: Barlow, system-ui, -apple-system, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+            background-color: var(--background);
+            color: var(--text);
+        }
 
-     header {
-         text-align: center;
-         margin-bottom: 40px;
-     }
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 32px;
+            background: var(--card-bg);
+            border-radius: 16px;
+            box-shadow: var(--shadow);
+        }
 
-     h1 {
-         font-size: 2.5rem;
-         margin: 0;
-         background: linear-gradient(135deg, var(--primary), var(--primary-dark));
-         -webkit-background-clip: text;
-         -webkit-text-fill-color: transparent;
-         margin-bottom: 12px;
-     }
+        header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
 
-     .subtitle {
-         color: var(--text-secondary);
-         font-size: 1.1rem;
-     }
+        h1 {
+            font-size: 2.5rem;
+            margin: 0;
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 12px;
+        }
 
-     .controls {
-         display: flex;
-         gap: 12px;
-         justify-content: center;
-         margin: 24px 0;
-     }
+        .subtitle {
+            color: var(--text-secondary);
+            font-size: 1.1rem;
+        }
 
-     button {
-         padding: 12px 24px;
-         background-color: var(--primary);
-         color: white;
-         border: none;
-         border-radius: 8px;
-         font-size: 1rem;
-         cursor: pointer;
-         transition: all 0.2s;
-         display: flex;
-         align-items: center;
-         gap: 8px;
-     }
+        .controls {
+            display: flex;
+            gap: 12px;
+            justify-content: center;
+            margin: 24px 0;
+        }
 
-     button:hover {
-         background-color: var(--primary-dark);
-         transform: translateY(-1px);
-     }
+        button {
+            padding: 12px 24px;
+            background-color: var(--primary);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all 0.2s;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
 
-     button:disabled {
-         opacity: 0.6;
-         cursor: not-allowed;
-         transform: none;
-     }
+        button:hover {
+            background-color: var(--primary-dark);
+            transform: translateY(-1px);
+        }
 
-     .article {
-         background: var(--card-bg);
-         border-radius: 12px;
-         overflow: hidden;
-         transition: all 0.3s;
-     }
+        button:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+            transform: none;
+        }
 
-     .article-header {
-         display: flex;
-         align-items: center;
-         justify-content: space-between;
-         margin-bottom: 24px;
-     }
+        .article {
+            background: var(--card-bg);
+            border-radius: 12px;
+            overflow: hidden;
+            transition: all 0.3s;
+        }
 
-     .article-title {
-         font-size: 1.8rem;
-         color: var(--primary);
-         text-decoration: none;
-         font-weight: 600;
-         margin: 0;
-     }
+        .article-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 24px;
+        }
 
-     .article-title:hover {
-         text-decoration: underline;
-     }
+        .article-title {
+            font-size: 1.8rem;
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 600;
+            margin: 0;
+        }
 
-     .article-image-container {
-         position: relative;
-         margin: 24px 0;
-         border-radius: 12px;
-         overflow: hidden;
-     }
+        .article-title:hover {
+            text-decoration: underline;
+        }
 
-     .article-image {
-         width: 100%;
-         max-height: 500px;
-         object-fit: cover;
-         transition: transform 0.3s;
-     }
+        .article-image-container {
+            position: relative;
+            margin: 24px 0;
+            border-radius: 12px;
+            overflow: hidden;
+        }
 
-     .article-image:hover {
-         transform: scale(1.02);
-     }
+        .article-image {
+            width: 100%;
+            max-height: 500px;
+            object-fit: cover;
+            transition: transform 0.3s;
+        }
 
-     .article-summary {
-         color: var(--text);
-         font-size: 1.1rem;
-         line-height: 1.8;
-         font-family: Barlow;
-         margin: 24px 0;
-     }
+        .article-image:hover {
+            transform: scale(1.02);
+        }
 
-     .stats {
-         display: flex;
-         gap: 24px;
-         margin-top: 24px;
-         padding-top: 24px;
-         border-top: 1px solid #e5e7eb;
-         color: var(--text-secondary);
-     }
+        .article-summary {
+            color: var(--text);
+            font-size: 1.1rem;
+            line-height: 1.8;
+            font-family: Barlow;
+            margin: 24px 0;
+        }
 
-     .stat {
-         display: flex;
-         align-items: center;
-         gap: 8px;
-     }
+        .stats {
+            display: flex;
+            gap: 24px;
+            margin-top: 24px;
+            padding-top: 24px;
+            border-top: 1px solid #e5e7eb;
+            color: var(--text-secondary);
+        }
 
-     .loading {
-         text-align: center;
-         color: var(--text-secondary);
-         padding: 40px;
-         font-style: italic;
-     }
+        .stat {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
 
-     .error {
-         padding: 16px;
-         background-color: #fee2e2;
-         border: 1px solid #ef4444;
-         border-radius: 8px;
-         color: #b91c1c;
-         margin: 16px 0;
-     }
+        .loading {
+            text-align: center;
+            color: var(--text-secondary);
+            padding: 40px;
+            font-style: italic;
+        }
 
-     @media (max-width: 768px) {
-         .container {
-             padding: 20px;
-         }
+        .error {
+            padding: 16px;
+            background-color: #fee2e2;
+            border: 1px solid #ef4444;
+            border-radius: 8px;
+            color: #b91c1c;
+            margin: 16px 0;
+        }
 
-         h1 {
-             font-size: 2rem;
-         }
+        @media (max-width: 768px) {
+            .container {
+                padding: 20px;
+            }
 
-         .article-title {
-             font-size: 1.5rem;
-         }
-     }
+            h1 {
+                font-size: 2rem;
+            }
 
-     .theme-toggle {
-         position: absolute;
-         top: 20px;
-         right: 20px;
-         background: none;
-         border: none;
-         color: var(--text);
-         cursor: pointer;
-         font-size: 1.2rem;
-     }
+            .article-title {
+                font-size: 1.5rem;
+            }
+        }
 
-     [data-theme="dark"] {
-         --primary: #c7799f;
-         --primary-dark: #c380d9;
-         --background: #0a0c12;
-         --card-bg: #00020a;
-         --text: #dfbceb;
-         --text-secondary: #dfbceb;
-         --link: salmon;
-     }
+        .theme-toggle {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: none;
+            border: none;
+            color: var(--text);
+            cursor: pointer;
+            font-size: 1.2rem;
+        }
+
+        [data-theme="dark"] {
+            --primary: #c7799f;
+            --primary-dark: #c380d9;
+            --background: #0a0c12;
+            --card-bg: #00020a;
+            --text: #dfbceb;
+            --text-secondary: #dfbceb;
+            --link: salmon;
+        }
     </style>
 </head>
+
 <body>
     <button class="theme-toggle" id="themeToggle">
         <i class="fas fa-moon"></i>
@@ -219,7 +221,9 @@
     <div class="container">
         <header>
             <h1>Curated Wikipedia Discoveries</h1>
-            <p class="subtitle">Explore a random article from <a href="https://en.wikipedia.org/wiki/Wikipedia:Unusual_articles">Wikipedia's Unusual Articles</a> list.</p>
+            <p class="subtitle">Explore a random article from <a
+                    href="https://en.wikipedia.org/wiki/Wikipedia:Unusual_articles">Wikipedia's Unusual Articles</a> list.
+            </p>
         </header>
         <div id="content">
             <div class="loading">Discovering interesting articles...</div>
@@ -234,56 +238,56 @@
 
     <script>
 
-         const content = document.getElementById('content');
-         const randomButton = document.getElementById('randomButton');
-         const themeToggle = document.getElementById('themeToggle');
-         const searchInput = document.getElementById('searchInput');
-         const listViewButton = document.getElementById('listViewButton');
-         const progressBar = document.getElementById('progressBar');
-         const toast = document.getElementById('toast');
-         let articles = [];
-         let articleSummaries = [];
-         let currentArticle = null;
-         let isListView = false;
+        const content = document.getElementById('content');
+        const randomButton = document.getElementById('randomButton');
+        const themeToggle = document.getElementById('themeToggle');
+        const searchInput = document.getElementById('searchInput');
+        const listViewButton = document.getElementById('listViewButton');
+        const progressBar = document.getElementById('progressBar');
+        const toast = document.getElementById('toast');
+        let articles = [];
+        let articleSummaries = [];
+        let currentArticle = null;
+        let isListView = false;
 
-         function showToast(message, duration = 3000) {
-             toast.textContent = message;
-             toast.classList.add('show');
-             setTimeout(() => toast.classList.remove('show'), duration);
-         }
+        function showToast(message, duration = 3000) {
+            toast.textContent = message;
+            toast.classList.add('show');
+            setTimeout(() => toast.classList.remove('show'), duration);
+        }
 
-         function updateProgressBar() {
-             const scrolled = window.scrollY;
-             const max = document.documentElement.scrollHeight - window.innerHeight;
-             const width = `${(scrolled / max) * 100}%`;
-             progressBar.style.width = width;
-         }
+        function updateProgressBar() {
+            const scrolled = window.scrollY;
+            const max = document.documentElement.scrollHeight - window.innerHeight;
+            const width = `${(scrolled / max) * 100}%`;
+            progressBar.style.width = width;
+        }
 
-         window.addEventListener('scroll', updateProgressBar);
+        window.addEventListener('scroll', updateProgressBar);
 
-         function toggleTheme() {
-             const isDark = document.body.getAttribute('data-theme') === 'dark';
-             document.body.setAttribute('data-theme', isDark ? 'light' : 'dark');
-             themeToggle.innerHTML = `<i class="fas fa-${isDark ? 'moon' : 'sun'}"></i>`;
-             localStorage.setItem('theme', isDark ? 'light' : 'dark');
-             showToast(`${isDark ? 'Light' : 'Dark'} theme enabled`);
-         }
+        function toggleTheme() {
+            const isDark = document.body.getAttribute('data-theme') === 'dark';
+            document.body.setAttribute('data-theme', isDark ? 'light' : 'dark');
+            themeToggle.innerHTML = `<i class="fas fa-${isDark ? 'moon' : 'sun'}"></i>`;
+            localStorage.setItem('theme', isDark ? 'light' : 'dark');
+            showToast(`${isDark ? 'Light' : 'Dark'} theme enabled`);
+        }
 
-         const savedTheme = localStorage.getItem('theme') || 'light';
-         document.body.setAttribute('data-theme', savedTheme);
-         themeToggle.innerHTML = `<i class="fas fa-${savedTheme === 'dark' ? 'sun' : 'moon'}"></i>`;
-         themeToggle.addEventListener('click', toggleTheme);
+        const savedTheme = localStorage.getItem('theme') || 'light';
+        document.body.setAttribute('data-theme', savedTheme);
+        themeToggle.innerHTML = `<i class="fas fa-${savedTheme === 'dark' ? 'sun' : 'moon'}"></i>`;
+        themeToggle.addEventListener('click', toggleTheme);
 
-         function showError(message) {
-             content.innerHTML = `<div class="error">${message}</div>`;
-             randomButton.disabled = false;
-             listViewButton.disabled = true;
-         }
+        function showError(message) {
+            content.innerHTML = `<div class="error">${message}</div>`;
+            randomButton.disabled = false;
+            listViewButton.disabled = true;
+        }
 
-         function showLoading() {
-             content.innerHTML = '<div class="loading">Discovering an interesting article...</div>';
-             randomButton.disabled = true;
-         }
+        function showLoading() {
+            content.innerHTML = '<div class="loading">Discovering an interesting article...</div>';
+            randomButton.disabled = true;
+        }
 
         async function getAllArticles() {
             try {
@@ -327,12 +331,12 @@
                             </a>
                         </div>
                         ${currentArticle.originalimage ?
-                            `<div class="article-image-container">
+                        `<div class="article-image-container">
                                 <img src="${currentArticle.originalimage.source}"
                                      alt="${currentArticle.title}"
                                      class="article-image">
                              </div>`
-                            : ''}
+                        : ''}
                         <p class="article-summary">${currentArticle.extract}</p>
                         <div class="stats">
                             <div class="stat">
@@ -352,9 +356,17 @@
             }
         }
 
+        // Event listener for spacebar
+        document.addEventListener('keydown', (event) => {
+            if (event.code === 'Space' && !randomButton.disabled) {
+                getRandomArticle();
+            }
+        });
+
         randomButton.addEventListener('click', getRandomArticle);
 
         getAllArticles();
     </script>
 </body>
+
 </html>
